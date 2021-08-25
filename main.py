@@ -4,9 +4,8 @@ import click
 
 
 @click.command()
-@click.option('--name', prompt='Your name',
-              help='The person to greet.')
-@click.option('--count', help='Number of greetings.')
+@click.option('--name', prompt='Your name', help='The person to greet.')
+@click.option('--count',  prompt='Number of greetings', help='Number of greetings.')
 def hello(count, name):
     """Simple program that greets NAME for a total of COUNT times."""
     for x in range(count):
