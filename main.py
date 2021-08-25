@@ -13,5 +13,4 @@ def hello(count, name):
 
 
 if __name__ == '__main__':
-    os.environ["DEBUSSY"] = "1"
     hello()
