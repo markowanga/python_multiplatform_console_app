@@ -8,7 +8,7 @@ import click
 @click.option('--count',  prompt='Number of greetings', help='Number of greetings.')
 def hello(count, name):
     """Simple program that greets NAME for a total of COUNT times."""
-    for x in range(count):
+    for x in range(int(count)):
         click.echo(f"Hello {name}!")
 
 
