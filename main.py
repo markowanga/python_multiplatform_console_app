@@ -1,10 +1,12 @@
+import os
+
 import click
 
 
 @click.command()
-@click.option('--count', default=1, help='Number of greetings.')
 @click.option('--name', prompt='Your name',
               help='The person to greet.')
+@click.option('--count', help='Number of greetings.')
 def hello(count, name):
     """Simple program that greets NAME for a total of COUNT times."""
     for x in range(count):
@@ -12,4 +14,5 @@ def hello(count, name):
 
 
 if __name__ == '__main__':
+    os.environ["DEBUSSY"] = "1"
     hello()
