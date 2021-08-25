@@ -26,9 +26,18 @@ jobs:
         run: poetry install -vv
       - name: Build package
         run: poetry run pyinstaller --onefile main.py
-      - name: List dist
-        run: ls -la dist
       - uses: actions/upload-artifact@v2
+        if: matrix.os == 'ubuntu-20.04'
         with:
-          name: my-artifact
+          name: linux-dist
+          path: dist/*
+      - uses: actions/upload-artifact@v2
+        if: matrix.os == 'macos-latest'
+        with:
+          name: macos-dist
+          path: dist/*
+      - uses: actions/upload-artifact@v2
+        if: matrix.os == 'windows-latest'
+        with:
+          name: windows-dist
           path: dist/*
